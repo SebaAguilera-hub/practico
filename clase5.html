@@ -50,30 +50,18 @@
 
         .title{
            font-size: var(--lg);
-           margin-bottom: 12px;
-           text-align: center;
+           margin-bottom: 36px;
+           text-align: start;
         }
 
-        .subtitle{
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            font-weight: 300;
-            margin-top: 0;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-  
         .form{
             display: flex;
             flex-direction: column;
         }
 
-        .form a{
-            color: var(--hospital-grenn);
-            font-size: var(--sm);
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 52px;
+        .form div{
+            display: flex;
+            flex-direction: column;
         }
          
         .label{
@@ -83,35 +71,17 @@
 
         }
 
-        .input{
-            background-color: var(--text-input-field);
-            border: none;
-            border-radius: 8px;
-            height: 30px;
+        .value{
+            color: var(--very-light-pink);
             font-size: var(--md);
-            padding: 6px;
-            margin-bottom: 12px;
-        }
-        
-        .input-email{
-            margin-bottom: 22px;
-        }
-        .primary-button{
-            background-color: var(--hospital-grenn);
-            border-radius: 8px;
-            border: none;
-            color: white;
-            width: 100%;
-            cursor: pointer;
-            font-size: var(--md);
-            font-weight: bold;
-            height: 50px;
+            margin: 8px 0 32px 0;
         }
 
+        
         .secundary-button{
-            background-color: var(white);
+            background-color: white;
             border-radius: 8px;
-            border: 1px solid;
+            border: 1px solid var(--hospital-grenn);
             color: var(--hospital-grenn);
             width: 100%;
             cursor: pointer;
@@ -119,7 +89,6 @@
             font-weight: bold;
             height: 50px;
         }
-        
 
         .login-button{
             margin-top: 14px;
@@ -127,6 +96,16 @@
         }
 
         @media (max-width: 640px){
+
+            .form-container{
+              height: 100%;
+       
+            }
+
+            .form{
+              height: 100%;
+              justify-content: space-between;
+            }
             .logo{
                 display: block;
             }
@@ -136,19 +115,24 @@
 <body>
     <div class="login">
        <div class="form-container">
-        <img src="./logos/logo_bota_fora.svg" alt="logo" class="logo">
-       
+      
+        <h1 class="title">My account</h1>
+        
 
         <form action="/" class="form">
+            <div>
+            <label for="name" class="label">Name</label>
+            <p class="value">Pepsi man</p>
+            
             <label for="email" class="label">Email</label>
-            <input type="text" id="email" placeholder="example@example" class="input input-email">
-            <label for="password" class="label">Email</label>
-            <input type="password" id="new-password" placeholder="************" class="input input-password">
+            <p class="value">correo@example</p>
 
-            <input type="submit" value="Log in" class="primary-button login-button">
-            <a href="/">Forgot my password</a>
+            <label for="password" class="label">Password</label>
+            <p class="value">******************</p>
+            </div>
+        
+            <input type="submit" value="Edit" class="secundary-button login-button">
         </form>
-        <button class="secundary-button signup-button">Sign up</button>
        </div>
     </div>
 </body>
